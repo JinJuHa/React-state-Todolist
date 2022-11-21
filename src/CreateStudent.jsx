@@ -20,7 +20,7 @@ function CreateStudent({ name, time, todo, onDataChange, onCreate }) {
       <input
         type="text"
         name="time"
-        placeholder="시간"
+        placeholder="날짜"
         onChange={onDataChange}
         value={time}
       />
