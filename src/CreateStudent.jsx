@@ -1,11 +1,13 @@
 import React from "react";
 
+
 function CreateStudent({ name, time, todo, onDataChange, onCreate }) {
   const style = {
     width: "600px",
     margin: "20px",
     padding: "10px",
   };
+  
 
   return (
     <div style={style}>

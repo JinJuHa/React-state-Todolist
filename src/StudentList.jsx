@@ -3,12 +3,17 @@ import Student from "./Student";
 import CreateStudent from "./CreateStudent";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // css import
+import moment from 'moment';
+// 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
+import 'moment/locale/ko';
+
 
 function StudentList() {
   const [students, setStudents] = useState([
   ]);
-  const [value, onChange] = useState(new Date());
 
+  const [value, onChange] = useState(new Date());
+  
   const onRemove = (id) => {
     // student.id 가 매개변수로 작성하지 않는 데이터들만 추출해서 새로운 배열을 만듬
     // = student.id 가 id 인 것을 제거함
@@ -71,6 +76,9 @@ function StudentList() {
       ))}
     <div>
       <Calendar onChange={onChange} value={value} />
+         <div className="text-gray-500 mt-4">
+           {moment(value).format("YYYY년 MM월 DD일")} 
+         </div>
     </div>
     </div>
   );
